@@ -10,13 +10,12 @@ tickers = np.array(['TCS.NS','TECHM.NS','MINDTREE.NS','WIPRO.NS',
 
 yahoo_financials = YahooFinancials(tickers)
 
-start_date = st.date_input('Enter Start Date')
-st.write(type(start_date))
-data = yahoo_financials.get_historical_price_data(start_date=str(start_date), 
-                                                  end_date=str(date.today()), 
+#start_date = st.date_input('Enter Start Date')
+#st.write(type(start_date))
+data = yahoo_financials.get_historical_price_data(start_date='2018-01-01', 
+                                                  end_date='2022-12-31, 
                                                   time_interval='daily')
 
-prices_df = pd.DataFrame({
-    a: {x['formatted_date']: x['close'] for x in data[a]['prices']} for a in tickers})
+prices_df = pd.DataFrame({a: {x['formatted_date']: x['close'] for x in data[a]['prices']} for a in tickers})
 
 st.table(prices_df.head())
