@@ -4,9 +4,17 @@ from datetime import date
 import numpy as np
 from yahoofinancials import YahooFinancials
 import streamlit as st
-tickers = np.array(['TCS.NS','TECHM.NS','WIPRO.NS',
+
+sel = st.selectbox('Pick One',['IT','AUTO'])
+
+if sel == "IT":
+  tickers = np.array(['TCS.NS','TECHM.NS','WIPRO.NS',
                     'HCLTECH.NS','MPHASIS.NS','INFY.NS',
                     'LT.NS', 'SUBEXLTD.NS', 'NUCLEUS.NS'])
+elif sel == "AUTO":
+  tickers = np.array(['M&M.NS','MARUTI.NS','TATAMOTORS.NS','EICHERMOT.NS',
+                    'BAJAJ-AUTO.NS','HEROMOTOCO.NS','TIINDIA.NS',
+                    'TVSMOTOR.NS', 'ASHOKLEY.NS', 'BHARATFORG.NS'])
 
 yahoo_financials = YahooFinancials(tickers)
 
