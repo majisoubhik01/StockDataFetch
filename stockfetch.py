@@ -4,7 +4,7 @@ from datetime import date
 import numpy as np
 from yahoofinancials import YahooFinancials
 import streamlit as st
-tickers = np.array(['TCS.NS','TECHM.NS','MINDTREE.NS','WIPRO.NS',
+tickers = np.array(['TCS.NS','TECHM.NS','WIPRO.NS',
                     'HCLTECH.NS','MPHASIS.NS','INFY.NS',
                     'LT.NS', 'SUBEXLTD.NS', 'NUCLEUS.NS'])
 
