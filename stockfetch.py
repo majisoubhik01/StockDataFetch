@@ -4,7 +4,7 @@ from datetime import date
 import numpy as np
 from yahoofinancials import YahooFinancials
 import streamlit as st
-
+st. set_page_config(layout="wide")
 sel = st.selectbox('Pick One',['IT','AUTO'])
 
 if st.button("Get Data"):
